@@ -1,13 +1,20 @@
 /*
   Your Package 
-  DGIF-6037-301 
+  DGIF-6037-301 Nickolas Puckett and Kate Hartman
   Single button amazon package to play DFPong
+
+  includes the ble_funtions.h code for BLE connecton to the DFPong game
+  and for the CSV controller protocol
+
+  Includes the buzzer_functions.h which, alas, could not be heard outside the 
+  box so feedback was provided by changes to the lights under the big button.
+
+  Includes the rainbow.h code which is mostly the Adafruit stran test code to 
+  illuminate the marquee and the lights under the big button.
   
-  
-  used the muti tap library by Prashant Kumar
+  used the muti tap library by Prashant Kumar:
   Push Button Taps
   https://github.com/pk17r/PushButtonTaps
-
   - Arduino library to read Debounced Push Button Output as Single Tap, Double
     Tap or Long Press without blocking program flow
   - classifies taps as one of 4 types
