@@ -1,7 +1,7 @@
 /*
 rainbow.h
-DGIF-6037 301
-based on components of Adafruit "no wait" strandtest projects
+DGIF-6037 301 - Paul Van Rijn
+based on components of Adafruit "no wait" strandtest libraries
 includes a separate routine to manage the colours of the buttons
 */
 #define TLED_PIN    21
