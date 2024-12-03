@@ -1,11 +1,11 @@
-
-
+/*
+rainbow.h
+DGIF-6037 301
+based on components of Adafruit "no wait" strandtest projects
+includes a separate routine to manage the colours of the buttons
+*/
 #define TLED_PIN    21
 #define TLED_COUNT 26
-
-#define HI_BELL_PIN 17
-#define LO_BELL_PIN 16
-#define BELL_GAP  80
 
 #define BLED_COUNT 4 // number of lights in the button
 #define BLED_START 30 // position in the strip
@@ -26,15 +26,11 @@ int           pixelInterval = 70;       // Pixel Interval (ms)
 int           pixelQueue = 0;           // Pattern Pixel Queue
 int           pixelCycle = 0;           // Pattern Pixel Cycle
 uint16_t      pixelNumber = TLED_COUNT - 6;  // Total Number of Pixels
-
+// button globals
 uint32_t  buttonColour = 0;
 unsigned long buttonNextChange = 0;
 int buttonFlip = 0;
 uint16_t buttonStartPixel = pixelNumber + 1;
-
-int bell_count = 0;
-unsigned long bellNextDing = 0;
-
 
 // Input a value 0 to 255 to get a color value.
 // The colours are a transition r - g - b - back to r.
@@ -50,12 +46,10 @@ uint32_t Wheel(byte WheelPos) {
   WheelPos -= 170;
   return strip.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
 }
-/*
- ding the bells
 
 /*
  Button lights
-
+ 
  */
 void buttonLights(int buttonMode) {
   unsigned long buttonMillis = millis(); 
@@ -77,7 +71,7 @@ void buttonLights(int buttonMode) {
     }
     strip.show();
   }
-}
+}// button lights
 // Fill strip pixels one after another with a color. Strip is NOT cleared
 // first; anything there will be covered pixel by pixel. Pass in color
 // (as a single 'packed' 32-bit value, which you can get by calling
